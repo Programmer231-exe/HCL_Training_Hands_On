@@ -1,6 +1,6 @@
-package com.inheritance.case1;
+package com.inheritance.case2;
 
-public class Medical extends HLCollege{
+public abstract class Medical extends HLCollege{
 	private String building_name;
 	private int no_of_branches;
 	private boolean attached_hospital;
@@ -43,11 +43,10 @@ public class Medical extends HLCollege{
 		super();
 	}
 	public Medical(String registration_no, String name, String place, String trustee_names, int foundation_year,
-			String building_name, int no_of_branches,boolean attached_hospital, Branches[] branches) {
+			String building_name, int no_of_branches, Branches[] branches) {
 		super(registration_no, name, place, trustee_names, foundation_year);
 		this.building_name = building_name;
 		this.no_of_branches = no_of_branches;
-		this.attached_hospital = attached_hospital;
 		this.branches = branches;
 	}
 	
@@ -70,6 +69,7 @@ public class Medical extends HLCollege{
 		for(Branches branch : branches) {
 			System.out.format("\n%-20s %-20d %-20f %-20s", branch.getName(),branch.getSeats(),branch.getFees(),branch.getDepartment_head());
 		}
+		
 		
 	}
 	

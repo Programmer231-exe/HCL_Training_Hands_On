@@ -1,4 +1,4 @@
- package com.inheritance.case1;
+package com.inheritance.case2;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -100,17 +100,6 @@ public class HLCollegeService {
 		
 		return branches;
 		
-	}
-
-	public static boolean getHospitalAttached() throws IOException {
-		String choice;
-		System.out.println("College has Hospital?");
-		choice = br.readLine();
-		
-		if(choice.equalsIgnoreCase("Yes"))
-			return true;
-		else
-			return false;
 	}
 	
 	

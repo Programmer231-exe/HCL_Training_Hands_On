@@ -1,6 +1,6 @@
-package com.inheritance.case1;
+package com.inheritance.case2;
 
-public class Engineering extends HLCollege{
+public abstract class Engineering extends HLCollege{
 	private String building_name;
 	private int no_of_branches; 
 	private Branches[] branches;
