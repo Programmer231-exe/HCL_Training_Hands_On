@@ -2,8 +2,6 @@ package com.hands_on_hcl.case_4;
 
 import java.util.Scanner;
 
-import com.hands_on_hcl.Player;
-
 public class Main {
 
 	public static void main(String[] args) {
