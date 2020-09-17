@@ -6,7 +6,6 @@ import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 import java.util.Set;
 
 public class AddressFactory {
@@ -19,8 +18,10 @@ public class AddressFactory {
 		try {
 			System.out.println("Enter the number of addresses you want to add");
 			count = Integer.parseInt(br.readLine());
-			System.out.println("Enter User address in CSV(Username,AddressLine1,AddressLine2,Pincode");
+
 			for (int i = 0; i < count; i++) {
+				System.out.println(
+						"Enter the address " + (i + 1) + " Details(addressline1,addressline2,city,state,pincode)");
 				detail = br.readLine();
 				splittedDetail = detail.split(",");
 				addressList.add(new Address(splittedDetail[0], splittedDetail[1], splittedDetail[2], splittedDetail[3],
@@ -34,11 +35,11 @@ public class AddressFactory {
 
 	}
 
-	private static Map<String, List<Address>> addressMapGenerator() {
+	private static HashMap<String, ArrayList<Address>> addressMapGenerator() {
 		List<Address> addresss = addressGenerator();
 		List<String> rejected = new ArrayList<String>();
 		String city;
-		Map<String, List<Address>> mappedAddress = new HashMap<String, List<Address>>();
+		HashMap<String, ArrayList<Address>> mappedAddress = new HashMap<String, ArrayList<Address>>();
 		for (int i = 0; i < addresss.size(); i++) {
 			city = addresss.get(i).getCity();
 			if (rejected.contains(city)) {
@@ -52,63 +53,51 @@ public class AddressFactory {
 		return mappedAddress;
 	}
 
-	private static List<Address> getAddressList(String city, List<Address> addresss) {
-		List<Address> addressofSameCity = new ArrayList<Address>();
+	private static ArrayList<Address> getAddressList(String city, List<Address> addresss) {
+		ArrayList<Address> addressofSameCity = new ArrayList<Address>();
 		addressofSameCity.removeAll(addressofSameCity);
 
 		for (int j = 0; j < addresss.size(); j++) {
 			if (city.equals(addresss.get(j).getCity())) {
 				addressofSameCity.add(addresss.get(j));
-				}
+			}
 
 		}
 
 		return addressofSameCity;
 
 	}
-	
-	public static HashMap<String,HashMap<String,ArrayList<Address>>> finalMappedAddress(){
-		Map<String,List<Address>> mappedAddress = addressMapGenerator();
-		HashMap<String,HashMap<String,ArrayList<Address>>> finalAddressList = new HashMap<String,HashMap<String,ArrayList<Address>>>();
-		List<Address> addressList;
-		List<String> rejected = new ArrayList<String>();
-		Set<String> keys = mappedAddress.keySet();
-		String keysss =String.join(",",keys);
-		String[] keyss = keysss.split(",");
-		String state;
-		for (int i = 0; i < mappedAddress.size(); i++) {
-			addressList = mappedAddress.get(keyss[i]);
-			state = addressList.get(0).getState();
-			if (rejected.contains(state)) {
-				System.out.print("");
-			} else {
-				finalAddressList.put(state, getMappedAddress(state, mappedAddress,keyss));
-			}
 
-			rejected.add(state);
+	public static HashMap<String, HashMap<String, ArrayList<Address>>> finalMappedAddress() {
+		HashMap<String, ArrayList<Address>> mappedAddress = addressMapGenerator();
+		HashMap<String, HashMap<String, ArrayList<Address>>> finalAddressList = new HashMap<String, HashMap<String, ArrayList<Address>>>();
+		Set<String> keys = mappedAddress.keySet();
+		String key = String.join(",", keys);
+		String[] keyss = key.split(",");
+		for (int i = 0; i < keyss.length; i++) {
+			String state = mappedAddress.get(keyss[i]).get(0).getState();
+			finalAddressList.put(state, getMappedAddress(state, mappedAddress));
 		}
 		return finalAddressList;
-		
-		
+
 	}
-	
-	
-	private static HashMap<String, ArrayList<Address>> getMappedAddress(String state,Map<String,List<Address>> mappedAddress){
-		HashMap<String, ArrayList<Address>> stateaddress = new HashMap<String,ArrayList<Address>>();
+
+	private static HashMap<String, ArrayList<Address>> getMappedAddress(String state,
+			HashMap<String, ArrayList<Address>> mappedAddress) {
+		HashMap<String, ArrayList<Address>> stateaddress = new HashMap<String, ArrayList<Address>>();
 		List<Address> address;
 		Set<String> keys = mappedAddress.keySet();
-		String keysss =String.join(",",keys);
+		String keysss = String.join(",", keys);
 		String[] keyss = keysss.split(",");
 		String localState;
-			for(int j=0; j<keys.length; j++) {
-				address = mappedAddress.get(keys[j]);
-				localState = address.get(0).getState();
-				if(state.equals(localState)) {
-					stateaddress.put(state,(ArrayList<Address>)mappedAddress.get(keys[j]));
-				}
+		for (int j = 0; j < keyss.length; j++) {
+			address = mappedAddress.get(keyss[j]);
+			localState = address.get(0).getState();
+			if (state.equals(localState)) {
+				stateaddress = mappedAddress;
 			}
-		
-		
+
+		}
 		return stateaddress;
 	}
 }

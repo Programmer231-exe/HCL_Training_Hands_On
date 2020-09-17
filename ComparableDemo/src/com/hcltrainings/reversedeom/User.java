@@ -1,8 +1,5 @@
 package com.hcltrainings.reversedeom;
 
-import java.util.Map;
-import java.util.Map.Entry;
-
 public class User implements Comparable<User>{
 	private String name;
 	private String mobileNumber;
@@ -48,8 +45,8 @@ public class User implements Comparable<User>{
 		return String.format("%-15s%-15s", this.getName() ,this.getMobileNumber());
 	}
 	
-	public int compareTo(User u) {
-		return this.getUsername().compareTo(u.getUsername());
+	public int compareTo(User user) {
+		return this.getName().compareTo(user.getName());
 	}
 	
 }
