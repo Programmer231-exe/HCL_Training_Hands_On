@@ -26,15 +26,12 @@ public class Main {
 		case 1:
 			System.out.println("Enter the name");
 			name = scanner.nextLine();
-			for (User user : userList) {
-				if (user.getName().equals(name))
-
-					searcher = user;
-
-			}
+			searcher = new User();
+			searcher.setName(name);
 			Collections.sort(userList, new NameComparator());
-			if (Collections.binarySearch(userList, searcher, new NameComparator()) > 0) {
-				output = searcher;
+			int result = Collections.binarySearch(userList, searcher, new NameComparator());
+			if (result > 0) {
+				output = userList.get(result);
 			} else {
 				System.out.println("No Record Found with the name");
 			}
@@ -42,15 +39,14 @@ public class Main {
 		case 2:
 			System.out.println("Enter the Email");
 			email = scanner.nextLine();
-			for (User user : userList) {
-				if (user.getEmail().equals(email))
-					searcher = user;
-			}
+			searcher = new User();
+			searcher.setEmail(email);
 			Collections.sort(userList, new EmailComparator());
-			if (Collections.binarySearch(userList, searcher, new EmailComparator()) > 0) {
-				output = searcher;
+			result = Collections.binarySearch(userList, searcher, new EmailComparator());
+			if (result > 0) {
+				output = userList.get(result);
 			} else {
-				System.out.println("NO record found with the email");
+				System.out.println("No record found with the email");
 			}
 			break;
 		}
