@@ -21,6 +21,7 @@ public class Main {
 
 		System.out.println("Search by " + "\n1.Name" + "\n2.Email");
 		int choice = scanner.nextInt();
+		int result;
 		scanner.nextLine();
 		switch (choice) {
 		case 1:
@@ -29,7 +30,7 @@ public class Main {
 			searcher = new User();
 			searcher.setName(name);
 			Collections.sort(userList, new NameComparator());
-			int result = Collections.binarySearch(userList, searcher, new NameComparator());
+			result = Collections.binarySearch(userList, searcher, new NameComparator());
 			if (result > 0) {
 				output = userList.get(result);
 			} else {
