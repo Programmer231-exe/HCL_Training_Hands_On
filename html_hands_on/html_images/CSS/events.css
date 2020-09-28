@@ -1,0 +1,17 @@
+body{
+    margin : 0em 5em 5em 5em;
+}
+
+h1{
+    text-align : center;
+}
+img{
+    width : 500px;
+    height : 300px;
+}
+div{
+    text-align: center;
+}
+div p{
+    text-align: left;
+}
