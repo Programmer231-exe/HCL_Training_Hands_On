@@ -1,0 +1,99 @@
+* {
+    box-sizing: content-box;
+    margin: 0;
+    padding: 0;
+}
+
+.main-header {
+    width: 100%;
+    background-color: blue;
+    text-align: center;
+}
+
+.main-title {
+    font-size: 2rem;
+    color: white;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+
+.mini-form {
+    text-align: center;
+    padding: 16px;
+}
+
+.buttons {
+    padding: 2rem;
+    margin-right: 2rem;
+    margin-left: 3rem;
+    
+}
+
+.btn {
+    margin-right: 2rem;
+    padding-right: 1rem;
+    padding-left: 1rem;
+    border: 2px solid black;
+    border-radius: 25px;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    color: white;
+    font-weight: bold;
+    font-size: 1rem;
+    box-shadow : 0px 4px 4px 0px rgb(97, 93, 97);
+    
+}
+
+#push{
+    background : green;
+}
+
+#pop{
+    background: red;
+}
+
+#display{
+    background : blue;
+}
+
+
+
+.mini-form {
+    font-weight: bold;
+    font-size: 1.5rem;
+
+
+}
+
+.eventName {
+    width: 50%;
+    font-size: 1.5rem;
+    padding: 0.3rem;
+}
+
+#successmessage {
+    color: rgb(124, 124, 233);
+    font-size: 1.5rem;
+}
+
+#result {
+    text-align: center;
+    display: inline-block;
+    margin-left: 0;
+
+}
+
+li{
+    font-weight : lighter;
+    text-align : left;
+
+}
+
+#eventList{
+    margin-left : 30%;
+}
+
+.pushed{
+    padding-top:0.4em;
+    box-shadow : none;
+}

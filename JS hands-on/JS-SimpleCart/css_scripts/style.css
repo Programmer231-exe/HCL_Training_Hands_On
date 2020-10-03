@@ -1,0 +1,81 @@
+*{
+    margin: 0;
+    padding : 0;
+    box-sizing: content-box;
+}
+table ,tr,td{
+    padding : 1rem;
+}
+.table-heading{
+    font-size : 2rem;
+    font-weight : bold;
+    text-align : center;
+
+}
+
+.mini-form{
+    margin: auto;
+   width : 50%;
+}
+
+.labels{
+    font-weight : bold;
+}
+
+.button-holder{
+    margin-top : 2rem;
+    text-align: center;
+}
+
+table{
+    background-color: grey;
+    box-shadow: 3px 0px 2px 2px rgb(156, 153, 153);
+}
+.btn{
+    padding-right : 1.5rem;
+    padding-left : 1.5rem;
+    padding-top : 1rem;
+    padding-bottom : 1rem;
+    background-color : green;
+    font-weight : bold;
+    color : white;
+    font-size: 1.1rem;
+    border-radius : 20%;
+    box-shadow : 2px 2px 3px 0px greenyellow;
+    margin-bottom: 5%;
+
+}
+.btn:hover{
+    background-color : white;
+    color : green;
+}
+.error-message{
+    text-align: center;
+    font-weight: bold;
+    
+}
+
+.result{
+    display: none;
+    margin :auto;
+}
+.result-table{
+    width :50%;
+    margin: auto;
+}
+
+.result-table,.result-table th,.result-table td,.result-table tr{
+    border : 2px solid black;
+}
+#error-message{
+    color : red;
+    font-weight : bold;
+    text-align : center;
+}
+#total{
+    text-align : center;
+    margin-top : 10%;
+    font-weight : bold;
+    color : blue;
+}
+

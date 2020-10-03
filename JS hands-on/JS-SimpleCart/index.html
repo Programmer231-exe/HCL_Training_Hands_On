@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel = "icon" href = "https://image.shutterstock.com/image-vector/shopping-cart-vector-icon-isolated-600w-1195100968.jpg" />
+    <title>Simple Cart</title>
+    <script src = "js_scripts/script.js"></script>
+    <link rel = "stylesheet" href = "css_scripts/style.css" />
+</head>
+<body>
+    <h2 class = "table-heading">Event Bills</h2>
+    <div class = "form">
+        <div><div class = "labels"></div>
+        <table class = "mini-form">  
+            <tbody><tr ><td class = "labels">ID</td><td><input type = "text" id = "eventId" name = "eventId" class = "field"/></td></tr>
+               <tr><td class = "labels">Event Name</td><td><input type = "text" id = "eventName" name = "eventName" class = "field"/></td></tr>
+                 <tr><td class = "labels">Price</td><td><input type = "text" id = "price" name = "price" class = "field"/></td></tr>
+             </tbody>
+         </table>
+         
+    </div>
+    <div class = "button-holder"><button id = "add" class = "btn">Add to Cart</button></div>
+    <div id = "error-message"></div>
+
+    <div id = "result">
+    </div>
+    
+    <div id = "total">
+
+    </div>
+</body>
+</html>
