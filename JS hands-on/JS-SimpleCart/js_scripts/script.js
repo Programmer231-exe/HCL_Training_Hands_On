@@ -49,7 +49,7 @@ window.onload = function () {
 
             str = '<table class = "result-table"><thead><th>ID</th><th>Product Name</th><th>Price</th><th>Quantity</th><th>Remove From Cart</th></thead><tbody>';
             let index = 0;
-            for (item of products) {
+            for (let item of products) {
                 str += '<tr><td>' + item.id + '</td><td>' + item.name + '</td><td>' + item.price + '</td><td id = "select' + index + '"></td><td id = "link' + index + '">';
                 index++;
             }
