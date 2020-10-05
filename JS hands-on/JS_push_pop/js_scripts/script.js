@@ -43,7 +43,7 @@ window.onload = function(){
     
     function checkEvents(eventname) {
         let result = true;
-        for (events of eventName) {
+        for (let events of eventName) {
             if (events === eventname) {
                 
                 result = false;
