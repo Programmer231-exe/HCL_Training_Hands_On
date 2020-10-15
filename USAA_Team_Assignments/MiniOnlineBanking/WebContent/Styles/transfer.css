@@ -1,0 +1,49 @@
+body{
+    background-image : url("https://image.shutterstock.com/z/stock-vector-people-sending-and-receiving-money-wireless-with-their-mobile-phones-hand-tapping-smart-phone-465600824.jpg");
+    background-size : 100% 600px;
+}
+
+table {
+    padding-top : 20px;
+    width : 50%;
+    margin : auto;
+    margin-top: 5%;
+    font-size : 1.5rem;
+    background-color : rgba(255,0,0,0.2);
+    border : 2px solid black;
+    border-radius : 50px;
+    padding-bottom : 20px;
+}
+td,tr,th{
+    padding : 0.5rem;
+}
+
+input,select{
+    width : 100%;
+    padding : 0.5em;
+    font-size : 0.7em;
+    font-weight : bold;
+    border-radius : 20px;
+}
+label{
+    color :black;
+    font-weight : bold;
+    
+}
+
+.receiver{
+    display : none;
+}
+
+.submit{
+    margin-left : 25%;
+    width : 50%;
+    background-color : green;
+    color : white;
+    text-align:center;
+}
+
+.submit:hover{
+    background-color : white;
+    color : green;
+}

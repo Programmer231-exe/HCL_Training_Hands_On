@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd">
+<context:annotation-config/>
+<context:component-scan base-package="org.qualifierdemo"></context:component-scan>
+<bean id = "orderOne" class = "org.qualifierdemo.Order" p:itemName = "item1" p:price = "230.07">
+	<qualifier value = "order1" />
+</bean>
+<bean id = "orderTwo" class = "org.qualifierdemo.Order" p:itemName = "item2" p:price = "230.07">
+	<qualifier value = "order2" />
+</bean>
+<bean id ="user" class = "org.qualifierdemo.User" p:name = "Jegan" p:age = "24" p:city = "Chennai" autowire="byType" /> 
+</beans>

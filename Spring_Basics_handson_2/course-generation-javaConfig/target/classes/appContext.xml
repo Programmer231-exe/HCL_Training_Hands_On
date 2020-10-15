@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd">
+
+<context:annotation-config/>
+<context:component-scan base-package="org.coursegenerationdemo"></context:component-scan>
+
+<!-- <bean id = "course1" class = "org.coursegenerationdemo.Course" p:name = "Java" p:mentor = "Sathish" p:fee = "1000" />
+<bean id = "course2" class = "org.coursegenerationdemo.Course" p:name = "Selenium" p:mentor = "Kanimozhi" p:fee = "2000" />
+<bean id = "course3" class = "org.coursegenerationdemo.Course" p:name = "Python" p:mentor = "Arun" p:fee = "500" />
+ -->
+</beans>

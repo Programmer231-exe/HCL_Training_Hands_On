@@ -1,0 +1,90 @@
+*{
+    box-sizing: content-box;
+    margin : 0;
+    
+}
+
+
+body{
+    background-image : url("https://image.shutterstock.com/z/stock-photo-piggy-bank-and-chains-on-gray-background-357761483.jpg");
+    background-size : 100% ;
+    background-repeat: no-repeat;
+}
+
+.main-header {
+    text-align : center;
+    font-family : Arial, Helvetica, sans-serif;
+    font-size: 2rem;
+    color : blue;
+    text-shadow: 2px 2px green ;
+}
+
+.form-template{
+    margin-top : 3%;
+    width : 35%;
+    height : 350px;
+    right : 5%;
+    position : fixed;
+    text-align : center;
+   
+}
+fieldset{
+    display: block;
+    height : 350px;
+    border-radius : 10px;
+    box-shadow : 10px 10px black;
+}
+label,input{
+    display : block;
+    padding : 1rem;
+}
+label{
+ font-size : 1.5rem;
+ color : white;
+ font-weight : bold;
+ 
+}
+input{
+    text-align : center;
+    width : 90%;
+    border-radius : 5px;
+    font-size : 1.2em;
+    color : black;
+    background-color : whitesmoke;
+    font-weight : bold;
+}
+
+.field-container{
+    background-color : rgba(0,0,0,0.2);
+}
+.submit{
+    margin-top : 10%;
+    padding : 0.5em;
+    font-size : 1.5rem;
+    font-weight: bold;
+    width : 50%;
+    background-color : green;
+    color : white;
+    border-radius : 10px;
+    margin-bottom : 20%;
+
+}
+.error-message{
+    margin-top : 3%;
+    color : red;
+    font-weight : bold;
+}
+
+.submit:hover{
+    color : green;
+    background-color: white;
+}
+
+footer{
+    width : 100%;
+    color : red;
+    bottom: 2px;
+    position : fixed;
+    text-align: center;
+    font-weight : bold;
+}

@@ -1,0 +1,115 @@
+*{
+    box-sizing : border-box;
+    margin : 0;
+    padding : 0;
+}
+nav{
+    margin-top : 2%;
+    margin-left : 1%;
+    display : block;
+   
+}
+li{
+    color : white;
+    list-style-type: none;
+    display : inline-block;
+    padding : 1em ;
+    background-color : green;
+    font-weight : bold;
+    font-size : 1.2rem;
+    border-radius : 20px;
+    padding-top : 0.5em;
+    padding-bottom : 0.5em;
+    margin-right : 3px;
+    
+}
+li:hover{
+    background-color : white;
+    color : green;
+}
+body{
+    background-image : url("https://image.shutterstock.com/z/stock-photo-piggy-bank-calculator-and-coins-on-wooden-1156973119.jpg");
+    background-size : 100% 650px;
+}
+#logout{
+    position : fixed;
+    right : 3px;
+    background-color : red;
+    color : white;
+}
+
+#logout:hover{
+    color : red;
+    background-color : white;
+}
+li > a{
+    text-decoration : none;
+    color : inherit;
+}
+#selected{
+    background-color : grey;
+    color : white;
+}
+
+.main-header{
+    color : white;
+    padding : 1.5rem;
+
+}
+
+.container{
+    display: grid;
+    grid-template-columns: auto auto auto;
+}
+.wallet{
+    
+    text-align : center;
+
+}
+.image-holder{
+    width : 200px;
+    height : 200px;
+    border-radius : 100%;
+   border : 5px solid rgb(233, 197, 197);
+   background-color : gold;
+    margin : auto;
+   margin-top : 5%;
+   font-size : 2rem;
+   
+}
+
+.amount{
+    vertical-align: center;
+    margin-top : 40%;
+}
+
+.desc{
+    text-align: center;
+    padding : 1rem;
+    margin-left : 10%;
+    font-size : 1.5em;
+    color : white;
+    font-weight: bold;
+    border-radius : 2px;
+    border : 1px solid black;
+    background-color :rgba(255,255,0,0.3);
+    border-radius : 50px;
+    margin-top : 5%;
+    width : 80%;
+    
+
+    
+}
+#Bank-Bank{
+    text-align: center;
+}
+
+#image{
+    border-radius : 50%;
+}
+.image{
+    margin-left : 25%;
+}
+.image:hover{
+    box-shadow : 0px 0px 10px 10px rgba(255,0,0,0.3);
+}

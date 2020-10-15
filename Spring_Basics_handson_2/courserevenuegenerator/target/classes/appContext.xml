@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:util="http://www.springframework.org/schema/util"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.0.xsd
+		http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-4.0.xsd">
+		
+<context:component-scan base-package="org.courserecommender.pojo"></context:component-scan>
+<context:annotation-config/>
+<!-- <bean name ="course1" class ="org.courserecommender.pojo.Course" p:name = "Java" p:mentor = "Sathish" p:fee = "1000" />
+<bean name ="course2" class ="org.courserecommender.pojo.Course" p:name = "Selenium" p:mentor = "Kanimozhi" p:fee = "2000" />
+<bean name ="course3" class ="org.courserecommender.pojo.Course" p:name = "Python" p:mentor = "Arun" p:fee = "500" />
+ --><!-- 
+<bean name = "coursee" class = "org.courserecommender.pojo.Course" scope= "prototype" /> -->
+
+<!-- 
+<bean name = "courseList" class = "org.courserecommender.pojo.CourseList" p:courseLists-ref = "couseList"/>
+ --><!-- <bean name = "courseeList" class = "org.courserecommender.pojo.CourseList" />
+<util:list id = "couseList" list-class = "java.util.ArrayList">
+	<ref bean = "course1" />
+	<ref bean = "course2" />
+	<ref bean = "course3" />
+</util:list> -->
+</beans>
