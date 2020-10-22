@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-4.3.xsd
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd
+		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.3.xsd
+		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.3.xsd">
+
+<mvc:annotation-driven/>
+<context:component-scan base-package="org.hcltrainingdemo"></context:component-scan>
+<mvc:resources location="/resources/" mapping="/resources/**"></mvc:resources>
+<context:property-placeholder location="classpath:mysqlDB.properties" />
+	
+	<context:component-scan
+		base-package="org.hcltrainingdemo"></context:component-scan>
+	<bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource"
+		p:driverClassName="com.mysql.cj.jdbc.Driver" p:url="${db.URL}"
+		p:username="${db.username}" p:password="${db.password}" />
+
+	<bean
+		class="org.springframework.web.servlet.view.InternalResourceViewResolver"
+		p:prefix="/WEB-INF/views/" p:suffix=".jsp" />
+
+	<bean id="mySessionFactory"
+		class="org.springframework.orm.hibernate5.LocalSessionFactoryBean"
+		p:dataSource-ref="dataSource">
+		<property name="mappingResources">
+			<list>
+				<value>Category.hbm.xml</value>
+			</list>
+		</property>
+		<property name = "packagesToScan" >
+			<array>
+				<value>org.hcltraining</value>
+			</array>
+		</property>
+		<property name="hibernateProperties">
+			<props>
+				<prop key="hibernate.dialect">org.hibernate.dialect.MySQL8Dialect</prop>
+				<prop key="hibernate.hbm2ddl.auto">update</prop>
+				<prop key="hibernate.show_sql">true</prop>
+				<prop key = "hibernate.connection.autocommit" >true</prop>
+			</props>
+		</property>
+	</bean>
+	<bean id="template"
+		class="org.springframework.orm.hibernate5.HibernateTemplate"
+		p:sessionFactory-ref="mySessionFactory" p:checkWriteOperations="false"/>
+	<bean name = "transactionManager" class = "org.springframework.orm.hibernate5.HibernateTransactionManager" p:sessionFactory-ref="mySessionFactory"/>
+	<bean id="d" class="org.hcltrainingdemo.dao.CategoryDAO" p:template-ref="template" />
+	
+	<tx:annotation-driven mode="proxy" proxy-target-class="false" transaction-manager="transactionManager"/>
+</beans>
